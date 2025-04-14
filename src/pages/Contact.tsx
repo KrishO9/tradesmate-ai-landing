@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -65,7 +64,7 @@ export default function Contact() {
       phone: "",
       businessType: "",
       companyName: "",
-      message: isDemo ? "I'm interested in scheduling a demo." : "",
+      message: "",
       preferredDate: "",
     },
   });

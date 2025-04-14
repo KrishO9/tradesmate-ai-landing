@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import logoImage from '/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 80, // Adjust for navbar height
+        top: element.offsetTop - 80,
         behavior: 'smooth'
       });
     }
@@ -42,7 +42,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-tradesmate-purple">TradesMate</h1>
+            <img 
+              src={logoImage} 
+              alt="TradesMate Logo" 
+              className="h-10 w-auto mr-4"
+            />
           </div>
           
           <div className="hidden md:flex space-x-8 items-center">
@@ -72,7 +76,6 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg absolute w-full">
           <div className="flex flex-col p-4 space-y-4">
