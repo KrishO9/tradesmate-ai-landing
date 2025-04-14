@@ -1,9 +1,11 @@
 
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowRight, PlayCircle, Bot, MessageSquare, PhoneCall } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -30,7 +32,7 @@ const Hero = () => {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Button 
-                onClick={() => scrollToSection('cta')}
+                onClick={() => navigate('/contact')}
                 size="lg"
                 className="bg-gradient-to-r from-tradesmate-purple to-tradesmate-purple-dark hover:opacity-90 transition-opacity text-lg"
               >
@@ -51,39 +53,67 @@ const Hero = () => {
             <div className="relative w-64 md:w-80">
               <div className="absolute -inset-4 bg-gradient-to-r from-tradesmate-purple to-tradesmate-purple-dark rounded-full opacity-20 blur-lg"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-tradesmate-light-gray p-4">
-                {/* Simplified phone illustration */}
+                {/* AI Agent phone illustration */}
                 <div className="h-96 rounded-2xl border border-gray-200 flex flex-col">
-                  <div className="bg-gray-50 p-3 border-b border-gray-200">
-                    <div className="w-24 h-2 bg-tradesmate-purple/30 rounded-full mx-auto"></div>
-                  </div>
-                  <div className="flex-1 p-4 flex flex-col justify-center items-center">
-                    <div className="w-16 h-16 bg-tradesmate-purple/20 rounded-full flex items-center justify-center mb-4">
-                      <div className="w-8 h-8 bg-tradesmate-purple rounded-full"></div>
+                  <div className="bg-gray-50 p-3 border-b border-gray-200 flex justify-between items-center">
+                    <div className="flex items-center">
+                      <Bot className="text-tradesmate-purple mr-2" size={16} />
+                      <span className="text-xs font-medium text-gray-500">TradesMate AI</span>
                     </div>
-                    <div className="w-32 h-2 bg-gray-200 rounded-full mb-2"></div>
-                    <div className="w-24 h-2 bg-gray-200 rounded-full mb-6"></div>
-                    <div className="space-y-3 w-full px-4">
+                    <div className="w-8 h-2 bg-tradesmate-purple/30 rounded-full"></div>
+                  </div>
+                  <div className="flex-1 p-4 flex flex-col justify-start">
+                    <div className="space-y-3 w-full px-2">
                       <div className="flex gap-2 items-start">
-                        <div className="w-6 h-6 bg-tradesmate-purple/20 rounded-full flex-shrink-0"></div>
+                        <div className="w-8 h-8 bg-tradesmate-purple/20 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Bot className="text-tradesmate-purple" size={16} />
+                        </div>
                         <div className="bg-tradesmate-light-gray p-2 rounded-lg rounded-tl-none flex-1">
-                          <div className="w-full h-2 bg-gray-300 rounded-full"></div>
+                          <p className="text-xs text-gray-700">Hello! I'm your TradesMate AI assistant. How can I help you today?</p>
                         </div>
                       </div>
+                      
                       <div className="flex gap-2 items-start justify-end">
                         <div className="bg-tradesmate-purple/20 p-2 rounded-lg rounded-tr-none flex-1">
-                          <div className="w-full h-2 bg-tradesmate-purple/40 rounded-full"></div>
+                          <p className="text-xs text-gray-700">I need a plumber for a leaking pipe.</p>
+                        </div>
+                        <div className="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0"></div>
+                      </div>
+                      
+                      <div className="flex gap-2 items-start">
+                        <div className="w-8 h-8 bg-tradesmate-purple/20 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Bot className="text-tradesmate-purple" size={16} />
+                        </div>
+                        <div className="bg-tradesmate-light-gray p-2 rounded-lg rounded-tl-none flex-1">
+                          <p className="text-xs text-gray-700">I can help with that! When would you like to schedule the appointment?</p>
                         </div>
                       </div>
+                      
+                      <div className="flex gap-2 items-start justify-end">
+                        <div className="bg-tradesmate-purple/20 p-2 rounded-lg rounded-tr-none flex-1">
+                          <p className="text-xs text-gray-700">Tomorrow morning if possible.</p>
+                        </div>
+                        <div className="w-8 h-8 bg-gray-200 rounded-full flex-shrink-0"></div>
+                      </div>
+                      
                       <div className="flex gap-2 items-start">
-                        <div className="w-6 h-6 bg-tradesmate-purple/20 rounded-full flex-shrink-0"></div>
+                        <div className="w-8 h-8 bg-tradesmate-purple/20 rounded-full flex items-center justify-center flex-shrink-0">
+                          <PhoneCall className="text-tradesmate-purple" size={14} />
+                        </div>
                         <div className="bg-tradesmate-light-gray p-2 rounded-lg rounded-tl-none flex-1">
-                          <div className="w-full h-2 bg-gray-300 rounded-full"></div>
+                          <p className="text-xs text-gray-700">Great! I've scheduled John for tomorrow at 9 AM. You'll receive a confirmation text shortly.</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="p-3 border-t border-gray-200 flex justify-center">
-                    <div className="w-12 h-4 bg-gray-200 rounded-full"></div>
+                  <div className="p-3 border-t border-gray-200 flex items-center gap-2 px-4">
+                    <MessageSquare className="text-gray-400" size={16} />
+                    <div className="h-8 flex-1 bg-gray-100 rounded-full"></div>
+                    <div className="w-6 h-6 bg-tradesmate-purple rounded-full flex items-center justify-center">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M12 5V19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -2,10 +2,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,21 +58,8 @@ const Navbar = () => {
             >
               Industries
             </button>
-            <button 
-              onClick={() => scrollToSection('testimonials')}
-              className="text-gray-700 hover:text-tradesmate-purple transition-colors"
-            >
-              Testimonials
-            </button>
             <Button 
-              onClick={() => window.open('#', '_blank')}
-              variant="outline" 
-              className="border-tradesmate-purple text-tradesmate-purple hover:bg-tradesmate-purple/10"
-            >
-              Login
-            </Button>
-            <Button 
-              onClick={() => scrollToSection('cta')}
+              onClick={() => navigate('/contact')}
               className="bg-gradient-to-r from-tradesmate-purple to-tradesmate-purple-dark hover:opacity-90 transition-opacity"
             >
               Start Free Trial
@@ -99,21 +88,8 @@ const Navbar = () => {
             >
               Industries
             </button>
-            <button 
-              onClick={() => scrollToSection('testimonials')}
-              className="py-2 text-gray-700 hover:text-tradesmate-purple transition-colors"
-            >
-              Testimonials
-            </button>
             <Button 
-              onClick={() => window.open('#', '_blank')}
-              variant="outline" 
-              className="border-tradesmate-purple text-tradesmate-purple hover:bg-tradesmate-purple/10 w-full"
-            >
-              Login
-            </Button>
-            <Button 
-              onClick={() => scrollToSection('cta')}
+              onClick={() => navigate('/contact')}
               className="bg-gradient-to-r from-tradesmate-purple to-tradesmate-purple-dark hover:opacity-90 transition-opacity w-full"
             >
               Start Free Trial

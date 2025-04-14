@@ -8,7 +8,12 @@ export const scrollReveal = () => {
     const elementVisible = 150;
     
     if (elementTop < windowHeight - elementVisible) {
-      element.classList.add('active');
+      if (!element.classList.contains('active')) {
+        element.classList.add('active');
+      }
+    } else {
+      // Optional: Remove active class when scrolling back up
+      // element.classList.remove('active');
     }
   });
 };

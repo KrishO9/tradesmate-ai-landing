@@ -1,9 +1,12 @@
 
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const CTA = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       const reveals = document.querySelectorAll('.reveal');
@@ -74,6 +77,7 @@ const CTA = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
+              onClick={() => navigate('/contact')}
               size="lg"
               className="bg-gradient-to-r from-tradesmate-purple to-tradesmate-purple-dark hover:opacity-90 transition-opacity text-lg px-8"
             >
@@ -82,6 +86,7 @@ const CTA = () => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={() => navigate('/contact?demo=true')}
               className="border-gray-300 text-gray-700 hover:bg-gray-100/50 text-lg"
             >
               Schedule a Demo
