@@ -1,12 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import Industries from '@/components/Industries';
+import Testimonials from '@/components/Testimonials';
+import CTA from '@/components/CTA';
+import Footer from '@/components/Footer';
+import { scrollReveal } from '@/utils/scrollReveal';
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize scroll reveal on mount
+    scrollReveal();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', scrollReveal);
+    
+    return () => {
+      window.removeEventListener('scroll', scrollReveal);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <Hero />
+        <Features />
+        <Industries />
+        <Testimonials />
+        <CTA />
+      </main>
+      <Footer />
     </div>
   );
 };
