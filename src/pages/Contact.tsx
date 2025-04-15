@@ -123,9 +123,9 @@ export default function Contact() {
                   name="fullName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Full Name*</FormLabel>
+                      <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Enter Full Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -137,9 +137,9 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email*</FormLabel>
+                      <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john@example.com" {...field} />
+                        <Input type="email" placeholder="Enter Email" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -151,9 +151,9 @@ export default function Contact() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone Number*</FormLabel>
+                      <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input placeholder="(555) 123-4567" {...field} />
+                        <Input placeholder="Enter Phone Number" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -165,7 +165,7 @@ export default function Contact() {
                   name="businessType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Business Type*</FormLabel>
+                      <FormLabel>Business Type</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
