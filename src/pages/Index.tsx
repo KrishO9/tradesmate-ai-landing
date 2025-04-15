@@ -6,6 +6,7 @@ import Features from '@/components/Features';
 import Industries from '@/components/Industries';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import CareFeatures from '@/components/careFeatures';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -89,6 +90,9 @@ const Index = () => {
         </section>
         <section id="features" className={`transition-opacity duration-500 ${activeSection === 'features' ? 'opacity-100' : 'opacity-70'}`}>
           <Features />
+        </section>
+        <section id="care-features" className={`transition-opacity duration-500 ${activeSection === 'care-features' ? 'opacity-100' : 'opacity-70'}`}>
+          <CareFeatures />
         </section>
         <section id="industries" className={`transition-opacity duration-500 ${activeSection === 'industries' ? 'opacity-100' : 'opacity-70'}`}>
           <Industries />
